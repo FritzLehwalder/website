@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<head lang="<?php echo $str_language; ?>" xml:lang="<?php echo $str_language; ?>">
+<meta name="theme-color" content="#8D25E8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="google-site-verification" content="8rTkbcXM7DA8wY-ren_EJlq6u52uHagHgtE0qM-kTbI"/>
+<meta name="author" content="">
+<meta name="og:site_name" content="">
+<meta name="og:title" content="">
+<meta name="og:image" content="social-image.png">
+<meta name="og:url" content="">
+<meta name="og:description" content=''>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content=""> 
+<META name="robots" content="index">
+<title>fritz</title>
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<embed>Loading...</embed>
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000 )" style="overflow: hidden; margin: 0; height: 100%;">
+<link rel="stylesheet" type="text/css" href="css/cssindex.css">
+	<div class="section">
+		<div class="ontop">
+	<center>
+	<div style="letter-spacing: 3;font-size: 15;"><div id="center">
+	<div>
+	<pre><b>
+____________ _____ _____ ______
+|  ___| ___ \_   _|_   _|___  /
+| |_  | |_/ / | |   | |    / / 
+|  _| |    /  | |   | |   / /  
+| |   | |\ \ _| |_  | |  / /___
+\_|   \_| \_|\___/  \_/ \_____/
+									   
+                                                         
+</b></pre>
+	<pre><pre align="middle">>>  <a href="https://steamcommunity.com/id/jungleapefritz">steam</a>  x  <a href="https://www.youtube.com/channel/UCSxL_I8geWDquFAONjHUalQ">youtube</a>  x  <a href="https://www.instagram.com/fritz.ape/">insta</a>  x  <a href="https://discordapp.com/users/424751987364724739">discord</a>  x  <a href="https://github.com/FritzLehwalder">github</a>  <<<br><br>>>  <a href="">placeholder</a>  x  <a href="">placeholder</a>  x  <a href="">placeholder</a>  <<</pre></pre>
+	<pre align="middle"> <p><span id="clock">&nbsp;</span></p><br><a onclick="mute(`aud`)" class="hoverunder">unmute/mute</a></pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div class="video-container">
+	<video id="vid" preload="auto" playsinline="" autoplay="" muted="" loop="" class="videoPlayer">
+		<source src="https://cdn.rob.gg/cuck/background.mp4" type="video/mp4">
+	</video>
+	<audio id="aud" preload="auto">
+		<source src="" type="audio/mp3">
+	</audio>
+	</div>
+</body>
+<script type="text/javascript">
+	function updateClock(){
+	var currentTime = new Date();
+	var currentHours = currentTime.getHours();
+	var currentMinutes = currentTime.getMinutes();
+	var currentSeconds = currentTime.getSeconds();
+	
+	currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
+	currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
+	
+	var timeOfDay = (currentHours < 12) ? "AM" : "PM";
+	currentHours = (currentHours > 12) ? currentHours - 12 : currentHours;
+	currentHours = (currentHours == 0) ? 12 : currentHours;
+	
+	var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+	
+	document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+	}
+	function mute(element){
+		var aud = document.getElementById(`${element}`)
+		if(aud.volume == 0.65) return aud.volume = 0;
+		if(aud.volume == 0) return aud.volume = 0.65;
+	}
+</script>
+</html>
